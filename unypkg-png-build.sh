@@ -51,11 +51,13 @@ wget https://downloads.sourceforge.net/libpng/libpng-"$latest_ver".tar.xz
 wget https://downloads.sourceforge.net/sourceforge/libpng-apng/libpng-"$latest_ver"-apng.patch.gz
 tar xf libpng-"$latest_ver".tar.xz
 mv libpng-"$latest_ver" libpng
+
 cd libpng || exit
 gzip -cd ../libpng-"$latest_ver"-apng.patch.gz | patch -p1
+
+cd /uny/sources || exit
 rm libpng-"$latest_ver".tar.xz
 rm libpng-"$latest_ver"-apng.patch.gz
-cd /uny/sources || exit
 
 version_details
 archiving_source
